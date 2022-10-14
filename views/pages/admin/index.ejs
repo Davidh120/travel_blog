@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap and css-->
+    <link rel="stylesheet" href="/assets/stylesheets/webapp.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/mini-default.min.css" />
+    <title>Blog de Viajes</title>
+  </head>
+  <body>
+    <header class="sticky"><%- include('../../partials/header_admin') %></header>
+
+    <body>
+        <div class="container">
+            <h1>Admin - Mis publicaciones</h1>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-12">
+
+                <% if(mensaje && mensaje.length > 0 ){%>
+                  <h4><span class="icon-info"></span><%=mensaje%></h4>
+                <%}%>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Titulo</th>
+                      <th>Resumen</th>
+                      <th>Votos</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% publicaciones.forEach((publicacion) =>{ %>
+                      <tr>
+                        <td><%=publicacion.titulo%></td>
+                        <td><%=publicacion.resumen%></td>
+                        <td><%=publicacion.votos%></td>
+                        <td>
+                          <a href="/admin/editar/<%=publicacion.id%>"><span class="icon-edit"></span>Editar</a>
+                          |
+                          <a href="/admin/procesar-eliminar/<%=publicacion.id%>" onclick="return confirm('¿Esta seguro de eliminar: <%=publicacion.titulo%>?')"><span class="icon-alert"></span>Eliminar</a>
+                        </td>
+                      </tr>
+                    <%})%>
+                  </tbody>
+                </table>
+
+                <hr>
+                <a class="button" href="/admin/agregar">Agregar publicacion</a>
+              </div>
+            </div>
+
+          </div>
+    </body>
+
+    <footer><%- include('../../partials/footer') %></footer>
+    <script src="/javascripts/script.js"></script>
+    </script>
+  </body>
+</html>

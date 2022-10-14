@@ -1,0 +1,47 @@
+html {
+  font-size: 14px;
+}
+
+.enlaces-registro {
+  float: right;
+  position: relative;
+  top: 14px;
+  right: 5px;
+}
+
+#iconos, #enlaces{
+  margin: 0 4px;
+}
+
+form.buscador{
+  padding: 0;
+  text-align: center;
+}
+
+.centrado{
+  text-align: center;
+}
+
+img.avatar{
+  max-height: 15px;
+  margin-bottom: -2px;
+}
+
+img.admin-avatar{
+  max-height: 30px;
+  top: -4px;
+  float: right;
+  position: relative;
+  right: 11.8em;
+}
+
+#editAvatar{
+  max-height: 5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+}
+
+#autorAvatar{
+  max-height: 22.65px;
+  padding-left: 3px;
+}

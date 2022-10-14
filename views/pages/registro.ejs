@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap and css-->
+    <link rel="stylesheet" href="/assets/stylesheets/webapp.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/mini-default.min.css" />
+    <title>Blog de Viajes</title>
+  </head>
+  <body>
+    <header class="sticky"><%- include('../partials/header') %></header>
+
+    <body>
+        <div class="container">
+            <h1>Registro</h1>
+            <p>Ingresa tus datos para ser un nuevo autor</p>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <% if (mensaje && mensaje.length > 0){ %>
+                        <h4><span class="icon-info"></span>
+                        <%=mensaje%></h4>
+                    <% } %>
+
+                    <form action="/procesar-registro" method="post" enctype="multipart/form-data"> <!--se deve encriptar si se hace uso de files -->
+                        <fieldset>
+                            <legend>Nuevo autor</legend>
+                            <p>
+                                <label for="email">Email</label>
+                                <br>
+                                <input type="email" id="email" name="email" required="true">
+                            </p>
+                            <p>
+                                <label for="pseudonimo">Pseudonimo</label>
+                                <br>
+                                <input type="text" id="pseudonimo" name="pseudonimo" required="true">
+                            </p>
+                            <p>
+                                <label for="contrasena">Contraseña</label>
+                                <br>
+                                <input type="password" id="contrasena" name="contrasena" required="true">
+                            </p>
+                            <p>
+                                <label for="avatar">Avatar</label>
+                                <br>
+                                <input type="file" id="avatar" name="avatar">
+                            </p>
+                            <p>
+                                <input type="submit" class="primary" value="Continuar">
+                            </p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer><%- include('../partials/footer') %></footer>
+    <script src="/javascripts/script.js"></script>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Bootstrap and css-->
+    <link rel="stylesheet" href="/assets/stylesheets/webapp.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/mini-default.min.css" />
+    <script src="/javascripts/ckeditor5-build-classic/ckeditor.js"></script>
+    <title>Blog de Viajes</title>
+  </head>
+  <body>
+    <header class="sticky"><%- include('../../partials/header_admin') %></header>
+
+    <body>
+        <div class="container">
+            <h1>Admin - Agregar publicacion</h1>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <% if(mensaje && mensaje.length > 0 ){%>
+                        <h4><span class="icon-info"></span><%=mensaje%></h4>
+                    <%}%>
+                    <form action="/admin/procesar-agregar" method="post">
+                        <fieldset>
+                            <legend>Datos de publicación</legend>
+                            <p>
+                                <label for="titulo">Titulo</label>
+                                <br>
+                                <input type="text" id="titulo" name="titulo" required="true">
+                            </p>
+                            <p>
+                                <label for="resumen">Resumen</label>
+                                <br>
+                                <textarea name="resumen" id="resumen"></textarea>
+                            </p>
+                            <p>
+                                <label for="contenido">Contenido</label>
+                                <br>
+                                <textarea name="contenido" id="contenido"></textarea>
+                            </p>
+                            <p>
+                                <input type="submit" class="primary" value="Publicar">
+                                <a href="/admin/index" class="button">Cancelar</a>
+                            </p>
+                        </fieldset>
+                    </form>
+                    <script>
+                        ClassicEditor
+                          .create(document.querySelector('#contenido'), {
+                            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                            heading: {
+                              options: [
+                                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                              ]
+                            }
+                          })
+                          .catch(error => {
+                            console.error(error);
+                          });
+                      </script>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer><%- include('../../partials/footer') %></footer>
+    <script src="/javascripts/script.js"></script>
+    </script>
+  </body>
+</html>
