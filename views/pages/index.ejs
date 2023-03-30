@@ -14,18 +14,17 @@
     <body>
       <div class="container">
         <img src="assets/images/fondo.jpg" width="100%" />
-        <h1>Inicio</h1>
-        <p>Aquí nuestras últimas publicaciones:</p>
 
         <div class="row">
           <div class="col-sm-12">
             <form action="/" class="buscador">
-              <label for="busqueda">Buscar publicación</label>
-              <input type="text" id="busqueda" name="busqueda" value="<%=busqueda%>">
-              <button type="submit"><span class="icon-search"></span>Buscar</button>
+              <input type="text" id="busqueda" name="busqueda" value="<%=busqueda%>" placeholder="buscar">
+              <button type="submit"><span class="icon-search"></span></button>
             </form>
           </div>
         </div>
+
+        <p>Últimas publicaciones:</p>
 
         <div class="row">
           <% publicaciones.forEach(publicacion => { %>

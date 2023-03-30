@@ -1,5 +1,13 @@
 html {
+  position: relative;
+  min-height: 100%;
   font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 .enlaces-registro {
@@ -13,9 +21,33 @@ html {
   margin: 0 4px;
 }
 
+.sections{
+  margin-right: 0.5em;
+}
+
 form.buscador{
   padding: 0;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+form.buscador input{
+  width: 20em;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+form.buscador button{
+  background-color: #ffffff00;
+  margin-left: -50px;
+}
+
+form.buscador button:hover{
+  background-color: #ffffff00;
 }
 
 .centrado{
@@ -44,4 +76,40 @@ img.admin-avatar{
 #autorAvatar{
   max-height: 22.65px;
   padding-left: 3px;
+}
+
+.default-avatar{
+  max-height: 30px;
+  top: 3px;
+  float: right;
+  position: relative;
+  right: 11.2em;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+
+  .item-label {
+    display: none;;
+  }
+
+  img.admin-avatar{
+    max-height: 30px;
+    top: -4px;
+    float: right;
+    position: relative;
+    right: 6.5em;
+  }
+
+  footer p{
+    font-size: 12px;
+  }
 }

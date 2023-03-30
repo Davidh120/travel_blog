@@ -10,18 +10,18 @@
         ><img class="admin-avatar" src="/avatars/<%=usuario.avatar%>" alt=""
       /></a>
       <%} else{%>
-      <a href="/admin/perfil"><span class="icon-user"></span></a>
+      <a href="/admin/perfil" class="default-avatar"><span class="icon-user"></span></a>
       <%}%>
     </div>
-  <a href="/admin/perfil"><%=usuario.pseudonimo%></a>
+  <a href="/admin/perfil"><span class="item-label"><%=usuario.pseudonimo%></span></a>
   |
   <a href="/procesar-cerrar-sesion">Cerrar Sesion</a>
   <%}%>
 </div>
 <a href="/" class="logo">Blog de Viajes</a>
-<a href="/" class="button"><span class="icon-home"></span> Inicio</a>
-<a href="/autores" class="button"><span class="icon-user"></span> Autores</a>
+<a href="/" class="sections"><span class="icon-home"></span><span class="item-label"> Inicio</span></a>
+<a href="/autores" class="sections"><span class="icon-user"></span><span class="item-label"> Autores</span></a>
 <% if(usuario == undefined){%>
 <%}else{%>
-<a href="/admin/index" class="button"><span class="icon-credit"></span>Admin</a>
+<a href="/admin/index" class="sections"><span class="icon-credit"></span><span class="item-label"> Admin</span></a>
 <%}%>

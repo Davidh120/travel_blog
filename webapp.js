@@ -13,7 +13,7 @@ var pool = mysql.createPool({
   connectionLimit: 20,
   host: "localhost",
   user: "root",
-  password: "12345",
+  password: "David1002",
   database: "blog_viajes",
 });
 
@@ -33,5 +33,5 @@ app.use(routerPrivadas);
 app.use(apis);
 
 app.listen(8080, () => {
-  console.log(`Server running`);
+  console.log(`Server running in port 8080`);
 });
