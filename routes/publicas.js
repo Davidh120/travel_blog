@@ -7,8 +7,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
   service: "hotmail",
   auth: {
-    user: "david.antonio12@hotmail.com",
-    pass: "dahadjp12045",
+    user: "email@hotmail.com",
+    pass: "123",
   },
 });
 
@@ -26,7 +26,7 @@ var pool = mysql.createPool({
   connectionLimit: 20,
   host: "localhost",
   user: "root",
-  password: "David1002",
+  password: "123",
   database: "blog_viajes",
 });
 
